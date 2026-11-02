@@ -9,6 +9,7 @@ import NoEncontrada from "./ui/pages/NoEncontrada"
 import Checkout from "./ui/pages/Checkout"
 import Login from "./ui/pages/Login";
 import RutaProtegida from "./ui/components/RutaProtegida";
+import Register from "./ui/pages/Register";
 
 export default function App() {
 
@@ -57,6 +58,9 @@ export default function App() {
         <Route path="/login" element = {
           <Login/>
         }/>
+        <Route path="/register" element = {
+          <Register/>}
+        />
       </Route>
       <Route path="*" element ={
           <NoEncontrada/>

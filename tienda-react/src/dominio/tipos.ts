@@ -35,9 +35,28 @@ export interface Pedido {
 }
 
 export interface Usuario {
-    id : number; 
+    id : number;
     nombre : string;
     email : string ; 
     token : string;
     expiraEn: number;
+}
+
+export interface RegistroUsuario {
+    nombre: string;
+    apellidos: string;
+    edad: string;
+    correo: string;
+    usuario: string;
+    contraseña: string;
+    confirmarContraseña: string;
+}
+
+export interface RespuestaRegistro {
+    id: number;
+    nombre: string;
+    apellidos: string;
+    edad: number;
+    correo: string;
+    usuario: string;
 }

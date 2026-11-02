@@ -1,3 +1,4 @@
+import { useState } from "react";
 import formatearPrecio from "../formato";
 import type { Producto } from "../../dominio/tipos";
 import EtiquetaStock from "./EtiquetaStock";
@@ -10,6 +11,7 @@ interface Props {
 
 function ProductCard({ producto, onAgregar } : Props) {
   const agotado = producto.stock === 0;
+  const [favorito, setFavorito] = useState(false);
   return (
     <article className={`w-64 rounded-xl border p-4 ${agotado && 'opacity-50'}`}>
         <img src={producto.imagen} alt={producto.nombre} className="mb-3 aspect-square object-contain" />
@@ -21,12 +23,13 @@ function ProductCard({ producto, onAgregar } : Props) {
         <EtiquetaStock stock={producto.stock}/>
         <p className="text-sx text-gray-500">{(producto.precio * 1.18).toFixed(2)} con IGV</p>
         <p className="mt-2">{formatearPrecio(producto.precio)}</p>
-        <p className="mt-1">{producto.descripcion}</p>
-        <button className="mt-3 rounded-full border px-4 text-sm" disabled={producto.stock===0}
+        <p className="mt-1 text-center text-gray-500">{producto.descripcion}</p>
+        <button className="mt-3 rounded-full border px-4 text-sm " disabled={producto.stock===0}
         onClick={() => onAgregar(producto)}
         >
           {producto.stock === 0 ? 'Agotado' : 'Agregar al carrito'}
         </button>
+        
     </article>
   )
 }

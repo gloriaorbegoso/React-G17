@@ -67,8 +67,9 @@ export function Home ( {esRespaldo, OnReintentar, productos, estado} : Props) {
                     busqueda !== '' ? `No encontramos productos para "${termino.trim()}"` : 'No hay productos en esta categoria'
                 }</p>
             )}
+
             {estado === 'listo' && (
-                <section>
+                <section className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
                 {
                     visibles.map((p) => <ProductCard producto={p} key={p.id} onAgregar={agregar}/>)
                 }
@@ -76,7 +77,7 @@ export function Home ( {esRespaldo, OnReintentar, productos, estado} : Props) {
                 )
             }
 
-            <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <section className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <Beneficio titulo="🚚 Envío Gratis" detalle="En compras desde S/199, a todo el país"></Beneficio>
                 <Beneficio titulo="💵 Cuotas sin interéses" detalle="Paga en cómodas cuotas"></Beneficio>
                 <Beneficio titulo="🛡️Garantía"></Beneficio>
