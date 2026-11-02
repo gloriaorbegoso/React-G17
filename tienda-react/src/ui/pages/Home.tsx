@@ -3,6 +3,7 @@ import type { EstadoCarga, Producto } from "../../dominio/tipos";
 import SkeletonCard from "../components/SkeletonCard";
 import ProductCard from "../components/ProductCard";
 import { useCart } from "../../aplicacion/useCart";
+import Beneficio from "../components/Beneficio";
 
 interface Props {
     esRespaldo : boolean ;
@@ -74,6 +75,12 @@ export function Home ( {esRespaldo, OnReintentar, productos, estado} : Props) {
                 </section>
                 )
             }
+
+            <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <Beneficio titulo="🚚 Envío Gratis" detalle="En compras desde S/199, a todo el país"></Beneficio>
+                <Beneficio titulo="💵 Cuotas sin interéses" detalle="Paga en cómodas cuotas"></Beneficio>
+                <Beneficio titulo="🛡️Garantía"></Beneficio>
+            </section>
         </>
     )
 }
