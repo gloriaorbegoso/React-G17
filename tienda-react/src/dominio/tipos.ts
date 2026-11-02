@@ -6,6 +6,7 @@ export interface Producto {
     imagen : string;
     stock : number;
     categoria : string;
+    descripcion? : string;
 }
 export const NOMBRE_TIENDA = 'Tienda Tech';
 export type Categoria = 'todas'| 'laptops'|'audio'|'relojes'|'computadoras';

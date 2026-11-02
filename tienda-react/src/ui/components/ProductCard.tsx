@@ -21,6 +21,7 @@ function ProductCard({ producto, onAgregar } : Props) {
         <EtiquetaStock stock={producto.stock}/>
         <p className="text-sx text-gray-500">{(producto.precio * 1.18).toFixed(2)} con IGV</p>
         <p className="mt-2">{formatearPrecio(producto.precio)}</p>
+        <p className="mt-1">{producto.descripcion}</p>
         <button className="mt-3 rounded-full border px-4 text-sm" disabled={producto.stock===0}
         onClick={() => onAgregar(producto)}
         >
