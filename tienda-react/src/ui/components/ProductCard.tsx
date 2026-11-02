@@ -1,4 +1,3 @@
-import { useState } from "react";
 import formatearPrecio from "../formato";
 import type { Producto } from "../../dominio/tipos";
 import EtiquetaStock from "./EtiquetaStock";
@@ -11,7 +10,6 @@ interface Props {
 
 function ProductCard({ producto, onAgregar } : Props) {
   const agotado = producto.stock === 0;
-  const [favorito, setFavorito] = useState(false);
   return (
     <article className={`w-64 rounded-xl border p-4 ${agotado && 'opacity-50'}`}>
         <img src={producto.imagen} alt={producto.nombre} className="mb-3 aspect-square object-contain" />
@@ -29,7 +27,7 @@ function ProductCard({ producto, onAgregar } : Props) {
         >
           {producto.stock === 0 ? 'Agotado' : 'Agregar al carrito'}
         </button>
-        
+
     </article>
   )
 }
