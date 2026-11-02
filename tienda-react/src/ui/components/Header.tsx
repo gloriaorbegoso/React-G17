@@ -20,6 +20,7 @@ export default function Header ( {nombre , eslogan = "Tecnologia para todos"} : 
                 <nav className="flex items-center gap-5 text-sm">
                     <NavLink to="/" className={({isActive}) => (isActive ? 'border-blue-600 font-semibold text-blue-700' : 'text-gray-600  hover:text-blue-600')}>Catalogo</NavLink>
                     <NavLink to="/checkout" className={({isActive}) => (isActive ? 'border-blue-600 font-semibold text-blue-700' : 'text-gray-600 hover:text-blue-600')}>Checkout</NavLink>
+                    <NavLink to="/favorito" className={({ isActive }) => (isActive ? 'border-blue-600 font-semibold text-blue-700' : 'text-gray-600 hover:text-blue-600')}>Favoritos</NavLink>
                 </nav>
             
                 <div className="flex flex-wrap items-center gap-4 text-sm">
@@ -34,7 +35,14 @@ export default function Header ( {nombre , eslogan = "Tecnologia para todos"} : 
                                 <button className="text-blue-700 underline hover:text-blue-900" onClick={salir}>Salir</button>
                             </div>
                         ) : (
-                            <Link to="/login" className="rounded-lg bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700">Inicie Sesion</Link>
+                            <div className="flex flex-wrap items-center gap-3">
+                                <Link to="/login" className="rounded-lg bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700">
+                                    Iniciar sesión
+                                </Link>
+                                <Link to="/register" className="rounded-lg border border-blue-600 px-4 py-2 font-medium text-blue-700 hover:bg-blue-50">
+                                    Registrarse
+                                </Link>
+                            </div>
                         )
                     }
                 </div>

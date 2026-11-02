@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import type { RegistroUsuario } from "../../dominio/tipos";
 import { registrarUsuario } from "../../infraestructura/registro";
@@ -124,11 +123,6 @@ export default function Register() {
             <button type="submit" disabled={enviando} className="mt-2 rounded-full border px-4 py-2 disabled:opacity-50">
                 {enviando ? "Registrando..." : "Registrarme"}
             </button>
-            <p className="text-center text-sm"> ¿Ya tienes una cuenta?{" "}
-                <Link to="/login" className="underline">
-                    Inicia sesión
-                </Link>
-            </p>
         </form>
     );
 }

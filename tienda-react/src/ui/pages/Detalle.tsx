@@ -3,6 +3,7 @@ import type { Producto } from "../../dominio/tipos";
 import EtiquetaStock from "../components/EtiquetaStock";
 import formatearPrecio from "../formato";
 import { useCart } from "../../aplicacion/useCart";
+import BotonFavorito from "../components/BotonFavorito";
 
 interface Props {
     productos : Producto [];
@@ -27,6 +28,7 @@ export default function Detalle ( {productos} : Props) {
                 <h1 className="text-2xl font-bold">{producto.nombre}</h1>
                 <EtiquetaStock stock={producto.stock}></EtiquetaStock>
                 <p className="mt-2 text-xl">{formatearPrecio(producto.precio * 1.18)} con IGV</p>
+                <BotonFavorito producto={producto} />
                 <button className="mt-4 rounded-full border px-4 py-1"
                 onClick={() => agregar(producto)}
                 >

@@ -10,6 +10,7 @@ import Checkout from "./ui/pages/Checkout"
 import Login from "./ui/pages/Login";
 import RutaProtegida from "./ui/components/RutaProtegida";
 import Register from "./ui/pages/Register";
+import Favoritos from "./ui/pages/Favoritos";
 
 export default function App() {
 
@@ -60,6 +61,9 @@ export default function App() {
         }/>
         <Route path="/register" element = {
           <Register/>}
+        />
+        <Route path="/favorito" element = {
+          <Favoritos/>}
         />
       </Route>
       <Route path="*" element ={

@@ -2,6 +2,7 @@ import formatearPrecio from "../formato";
 import type { Producto } from "../../dominio/tipos";
 import EtiquetaStock from "./EtiquetaStock";
 import { memo } from "react";
+import BotonFavorito from "./BotonFavorito";
 
 interface Props {
   producto : Producto;
@@ -15,6 +16,7 @@ function ProductCard({ producto, onAgregar } : Props) {
         <img src={producto.imagen} alt={producto.nombre} className="mb-3 aspect-square object-contain" />
         <p className="text-sm text-gray-500">{producto.marca}</p>
         <h2 className="font-semibold">{producto.nombre}</h2>
+        <BotonFavorito producto={producto} />
         <p className="text-sm">{
             producto.stock === 0 ? 'Agotado' : `${producto.stock} disponibles`
         }</p>
